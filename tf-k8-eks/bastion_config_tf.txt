@@ -1,0 +1,18 @@
+   10  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   11  (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/cloud_user/.profile
+   14  brew install awscli
+   15  brew install kubernetes-cli
+   19  aws configure
+   21  brew install terraform
+   22  terraform --version
+  108  terraform init
+  109  terraform validate
+  110  terraform apply
+   
+96  aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name) --no-verify-ssl
+   97  kubectl cluster-info
+apply pacman
+  108  terraform init
+  109  terraform validate
+  110  terraform apply
+
